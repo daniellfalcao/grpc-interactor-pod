@@ -14,4 +14,6 @@ Pod::Spec.new do |s|
 
     s.source_files = 'GRPCInteractor/*.{swift,c,h}'
 
+    s.dependency pod 'gRPC-Swift', '~> 1.7.3'
+
 end
