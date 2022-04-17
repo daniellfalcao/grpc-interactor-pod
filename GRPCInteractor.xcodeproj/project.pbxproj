@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		68D51655280BB045005EA776 /* GRPCInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 68D51654280BB045005EA776 /* GRPCInteractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68D5165C280BB6F6005EA776 /* GRPCinteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5165B280BB6F6005EA776 /* GRPCinteractor.swift */; };
+		68D5165F280BB704005EA776 /* test.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5165D280BB704005EA776 /* test.pb.swift */; };
+		68D51660280BB704005EA776 /* test.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5165E280BB704005EA776 /* test.grpc.swift */; };
 		812EF9D3564655E9A8892A5C /* Pods_GRPCInteractor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E52D6822E7FE1EBC8841BF6 /* Pods_GRPCInteractor.framework */; };
 /* End PBXBuildFile section */
 
@@ -16,6 +19,9 @@
 		54D2580C4B75B2FB3BB4CEC6 /* Pods-GRPCInteractor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRPCInteractor.release.xcconfig"; path = "Target Support Files/Pods-GRPCInteractor/Pods-GRPCInteractor.release.xcconfig"; sourceTree = "<group>"; };
 		68D51651280BB045005EA776 /* GRPCInteractor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GRPCInteractor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D51654280BB045005EA776 /* GRPCInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRPCInteractor.h; sourceTree = "<group>"; };
+		68D5165B280BB6F6005EA776 /* GRPCinteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GRPCinteractor.swift; sourceTree = "<group>"; };
+		68D5165D280BB704005EA776 /* test.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.pb.swift; sourceTree = "<group>"; };
+		68D5165E280BB704005EA776 /* test.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.grpc.swift; sourceTree = "<group>"; };
 		8E52D6822E7FE1EBC8841BF6 /* Pods_GRPCInteractor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GRPCInteractor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -52,6 +58,9 @@
 		68D51653280BB045005EA776 /* GRPCInteractor */ = {
 			isa = PBXGroup;
 			children = (
+				68D5165E280BB704005EA776 /* test.grpc.swift */,
+				68D5165D280BB704005EA776 /* test.pb.swift */,
+				68D5165B280BB6F6005EA776 /* GRPCinteractor.swift */,
 				68D51654280BB045005EA776 /* GRPCInteractor.h */,
 			);
 			path = GRPCInteractor;
@@ -118,6 +127,7 @@
 				TargetAttributes = {
 					68D51650280BB045005EA776 = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -179,6 +189,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68D5165F280BB704005EA776 /* test.pb.swift in Sources */,
+				68D51660280BB704005EA776 /* test.grpc.swift in Sources */,
+				68D5165C280BB6F6005EA776 /* GRPCinteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +318,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B7E70179D8271B9EF03DD60 /* Pods-GRPCInteractor.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -326,6 +340,8 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -334,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 54D2580C4B75B2FB3BB4CEC6 /* Pods-GRPCInteractor.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -355,6 +372,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
