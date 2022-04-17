@@ -2,9 +2,11 @@
 
 CURRENT_PATH="$(pwd)"
 SCHEME=GRPCInteractor
-ARCHIVE_PATH_IOS="${CURRENT_PATH}/archives/${FINAL_NAME}-iOS"
-ARCHIVE_PATH_IOS_SIMULATOR="${CURRENT_PATH}/archives/${FINAL_NAME}-iOS-simulator"
+ARCHIVE_PATH_IOS="${CURRENT_PATH}/archives/${SCHEME}-iOS"
+ARCHIVE_PATH_IOS_SIMULATOR="${CURRENT_PATH}/archives/${SCHEME}-iOS-simulator"
 FINAL_NAME=GRPCInteractor
+
+rm -rf ${CURRENT_PATH}/archives
 
 # iOS devices
 xcodebuild archive \
