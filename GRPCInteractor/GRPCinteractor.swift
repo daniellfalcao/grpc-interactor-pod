@@ -35,14 +35,36 @@ public class GRPCInteractor: NSObject {
     
     public func testSimpleCallWithErrorResponse(
         value: String
-    ) -> EventLoopFuture<Any> {
-        
+    ) throws -> String {
         var teste = TestPack_SimpleCallRequest.init()
         teste.value = value
-        return client!.testSimpleCallWithErrorResponse(teste, callOptions: nil)
-            .response
-            .map { response in
-                response.value
-            }.hop(to: group.next())
+        do {
+            let response = client!.testSimpleCallWithErrorResponse(teste, callOptions: nil)
+                .response
+                .map { response in
+                    response.value
+                }.hop(to: group.next())
+                return try response.wait()
+        } catch let err {
+            throw err
+        }
     }
+    
+    public func testSimpleCallWithResponse(
+        value: String
+    ) throws -> String {
+        var teste = TestPack_SimpleCallRequest.init()
+        teste.value = value
+        do {
+            let response = client!.testSimpleCallWithResponse(teste, callOptions: nil)
+                .response
+                .map { response in
+                    response.value
+                }.hop(to: group.next())
+                return try response.wait()
+        } catch let err {
+            throw err
+        }
+    }
+    
 }
